@@ -1,0 +1,28 @@
+cards.data: 
+    list of cards in game
+
+playerCards.data:
+    list of cards in player inventory; 5 cards
+    tip: copy name from cards.data to prevent typos
+
+enemyCards.data:
+    list of cards in enemy inventory; 5 cards or all (if enemy cards unknown)
+    (litterally write "all" into file for all cards; increases computation time by a lot)
+    same as playerCards.data
+
+Args (in order): -MaxDepthOverride
+Example: <exe> 3
+    to set MaxDepth at turn 1 to 3
+    simply starting exe sets this to standard
+        standard is 8 (all turns) if enemy cards are known
+                    (8 - CardCount/10) if enemy cards are unknown (5 for provided set);
+                        maxDepth increases by 2 each turn (since the possibillities are a lot less)
+        0 < maxDepth < 9
+        
+populateEnemyCards.py
+    program to add enemy cards to "enemyCards.data" using provided directional values
+    Order of values: up, right, bottom, left
+    (repeated 5 times since every player is supposed to have 5 cards)
+
+Gneeral Notes:
+    To end a program prematurely press "Ctrl + C" (copy shortcut in text editors; exits terminal applications)
